@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script type="text/javascript"
+	src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<script type="text/javascript">
+$(function(){
+	
+	$("#out").click(function(){
+		
+		window.location = "/logout"
+	});
+	
+		
+});
+
+</script>
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-10 column">
+				<h3>test</h3>
+			</div>
+			<div class="col-md-2 column">
+				<p>
+					hello,
+					<shiro:principal property=nickName />
+					,欢迎!
+				</p>
+				<a href="/logout">退出</a>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-2 column" shiro:hasRole="user">
+				<a href="/fromFile">upload</a>
+			</div>
+			<div class="col-md-2 column">
+				<button type="button" class="btn btn-default btn-primary">download</button>
+			</div>
+			<div class="col-md-8 column"></div>
+		</div>
+	</div>
+
+	<a href="/userInfo/toAddUser" shiro:hasRole="admin">add user</a>
+</body>
+</html>
