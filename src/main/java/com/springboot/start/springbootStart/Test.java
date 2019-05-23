@@ -2,21 +2,58 @@ package com.springboot.start.springbootStart;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.IntConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import org.omg.PortableServer.ServantActivator;
 
 import com.springboot.start.springbootStart.common.Constants;
 
+import afu.org.checkerframework.checker.units.qual.s;
+
 
 public class Test {
+	
+	private static final String b="123123";
+	private static final Map m =new HashMap<>();
 
 //	private static RuntimeSchema<UserVo> schema = RuntimeSchema.createFrom(UserVo.class);
 
 	private static final String [] a = {"123","234","789"};
 	
+	private static final String [] c= {"su","m","t","w","th","f","sa"};
+	
 	public static void main(String[] args) {
+		
+//		List<String> list = new ArrayList<>();
+//		
+//		String b="0 0  0 ";
+//		
+//		IntStream.range(0, b.length()).forEach(i ->{
+//			
+//			if ("0".equals(String.valueOf(b.charAt(i)))) {
+//				list.add(c[i]);
+//			}
+//		});
+//
+//		System.out.println(list);
+//		System.out.println("1233");
+		
+		
+//		String s="12";
+//		s="23";
+//		System.out.println(s);
+		
+//		b="343"; error
+//		m.put("12", "你好");ok
 		
 //		String s1 = "疯狂JAVA";     
 //	    String s2 = "疯狂" + "JAVA";     
@@ -58,7 +95,7 @@ public class Test {
 //		names.replaceAll(name -> name.toUpperCase());
 //		System.out.println(names.toString());
 		
-		List<Integer> list = Arrays.asList(1,2,3,4,3,2,5,6,4);
+//		List<Integer> list = Arrays.asList(1,2,3,4,3,2,5,6,4);
 		
 		
 //		List<Integer> collect = list.stream().distinct().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
@@ -128,6 +165,23 @@ public class Test {
 //		Arrays.sort(a, Comparator.naturalOrder());
 //		System.out.println(Arrays.toString(a));
 		
+		
+		List<String> arrayList = new ArrayList<String>() {
+			{
+				add("1");
+				add("2");
+			}
+		} ;
+	
+		List<String> list = new ArrayList<>();
+		
+//		Collections.copy(arrayList, list);
+		
+		list.addAll(arrayList);
+		
+		System.out.println(list);
+		
+		System.out.println("123344");
 	}
 
 
